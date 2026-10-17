@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf6ff">
+  <title>AuraBot — Your AI Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar panel">
+      <a class="brand" href="/" aria-label="AuraBot home">
+        <span class="bot-logo" aria-hidden="true"><span class="antenna"></span><span class="bot-face"><i></i><i></i><b></b></span></span>
+        <span><strong>Aura<span>Bot</span><sup>✦</sup></strong><small>Your Thoughts. Your AI. Your Aura.</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" id="newChatBtn"><span>▤</span> New Chat</button>
+        <button class="nav-item" id="historyBtn"><span>◷</span> Chat History</button>
+        <button class="nav-item" id="exploreBtn"><span>✧</span> Explore</button>
+        <button class="nav-item" id="settingsBtn"><span>⚙</span> Settings</button>
+      </nav>
+      <div class="side-art">
+        <div class="art-copy">Small questions<br>can lead to<br>great ideas <span>✧</span></div>
+        <div class="big-bot" aria-hidden="true"><span class="antenna"></span><span class="bot-face"><i></i><i></i><b></b></span><span class="bot-arm"></span></div>
+        <span class="sparkle s1">✦</span><span class="sparkle s2">♡</span><span class="sparkle s3">✧</span>
+      </div>
+      <button class="profile-card" id="profileBtn"><span class="profile-avatar">P</span><span><b>Priyadarshini S</b><small>Dream · Learn · Build</small></span><span class="chevron">⌄</span></button>
+    </aside>
+
+    <main class="chat-panel panel">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuBtn" aria-label="Toggle menu">☰</button>
+        <div class="top-title">AuraBot<sup>✦</sup></div>
+        <div class="top-actions"><button class="icon-button" id="themeBtn" title="Toggle appearance" aria-label="Toggle appearance">☼</button><span class="online-pill"><i></i> Online</span></div>
+      </header>
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="hero-orb"><span class="bot-logo large" aria-hidden="true"><span class="antenna"></span><span class="bot-face"><i></i><i></i><b></b></span></span><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span></div>
+          <h1>Hello Priya! <span>👋</span></h1>
+          <p class="welcome-sub">I'm <b>AuraBot</b> — your AI companion.</p>
+          <p class="welcome-hint">Ask me anything, get instant answers, explore ideas,<br class="desktop-break"> solve problems, and more!</p>
+          <div class="quick-grid">
+            <button class="quick-card" data-prompt="Explain a difficult concept in simple words."><span class="quick-icon blue">♧</span><span>Explain a concept<small>in simple words</small></span></button>
+            <button class="quick-card" data-prompt="Summarize the main points of a topic about AI."><span class="quick-icon periwinkle">▤</span><span>Summarize<small>any topic</small></span></button>
+            <button class="quick-card" data-prompt="Help me create clear study notes."><span class="quick-icon mint">▥</span><span>Create study<small>notes</small></span></button>
+            <button class="quick-card" data-prompt="Create five beginner-friendly quiz questions about AI."><span class="quick-icon lilac">?</span><span>Generate<small>quiz questions</small></span></button>
+            <button class="quick-card" data-prompt="Help me debug a JavaScript problem."><span class="quick-icon aqua">‹/›</span><span>Help with<small>coding</small></span></button>
+            <button class="quick-card" data-prompt="Let's have a friendly chat. What can you help me with? "><span class="quick-icon sky">☏</span><span>Just chat<small>with me</small></span></button>
+          </div>
+        </div>
+        <div class="messages" id="messages">
+          <article class="message assistant-message initial-message"><span class="mini-bot" aria-hidden="true">✦</span><div class="message-content"><p>I'm so happy to see you here, Priya! 🩵</p><p>What would you like to explore today?</p><p>You can ask me anything — studies, ideas, doubts,<br class="desktop-break"> or just have a casual chat. I'm here to help! ✨</p><time>Just now</time></div></article>
+        </div>
+      </section>
+      <form class="composer" id="chatForm">
+        <button type="button" class="attach-button" id="attachBtn" aria-label="Attachment information" title="Attachments are not enabled yet">＋</button>
+        <label class="sr-only" for="messageInput">Type your message</label>
+        <textarea id="messageInput" rows="1" maxlength="5000" placeholder="Type your message here..." required></textarea>
+        <button type="button" class="emoji-button" id="emojiBtn" aria-label="Add a smile">☺</button>
+        <button type="submit" class="send-button" id="sendBtn" aria-label="Send message"><span>➤</span></button>
+      </form>
+      <p class="composer-note">AuraBot can make mistakes. Check important information.</p>
+    </main>
+
+    <aside class="rightbar">
+      <section class="about-card panel">
+        <div class="cover-art"><span class="cover-phrase">Better<br>Ideas<br>Together <b>♡</b></span><span class="cover-cloud cloud-one"></span><span class="cover-cloud cloud-two"></span></div>
+        <div class="about-avatar"><span class="bot-logo medium" aria-hidden="true"><span class="antenna"></span><span class="bot-face"><i></i><i></i><b></b></span></span></div>
+        <div class="about-heading"><h2>AuraBot</h2><p>Your AI Companion <span>✧</span></p></div>
+        <div class="feature-list">
+          <div class="feature"><span class="feature-icon">✧</span><span><b>Answer Questions</b><small>Get clear and simple answers</small></span></div>
+          <div class="feature"><span class="feature-icon cyan">▤</span><span><b>Explain Concepts</b><small>Understand better, learn faster</small></span></div>
+          <div class="feature"><span class="feature-icon blue">▣</span><span><b>Create Notes</b><small>Study smarter, not harder</small></span></div>
+          <div class="feature"><span class="feature-icon pink">◇</span><span><b>Generate Quizzes</b><small>Test your knowledge</small></span></div>
+          <div class="feature"><span class="feature-icon cyan">◎</span><span><b>Multi-Language Support</b><small>English&nbsp; | &nbsp;தமிழ்&nbsp; | &nbsp;Tanglish</small></span></div>
+        </div>
+      </section>
+      <section class="quote-card panel"><span class="quote-mark">❞</span><p>“A little progress<br>each day adds up to<br>big results.” <span>♡</span></p><span class="leaf-art">❧</span></section>
+      <section class="recent-card panel" id="recentCard"><div class="recent-heading"><h3>Recent Chats</h3><button id="viewAllBtn">View all</button></div><div id="recentList"><button class="recent-item" data-prompt="What is Artificial Intelligence?"><span>▤</span><span>What is Artificial Intelligence?<small>Try this prompt</small></span></button><button class="recent-item" data-prompt="Give me study tips for B.Com IT."><span>▤</span><span>Study tips for B.Com IT<small>Suggested question</small></span></button><button class="recent-item" data-prompt="Share web development learning resources."><span>▤</span><span>Web development resources<small>Suggested question</small></span></button></div></section>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
