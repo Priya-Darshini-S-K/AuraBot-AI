@@ -1,49 +1,102 @@
-# AuraBot AI
+# 🤖 AuraBot — Your AI Companion
 
-A pastel sky-blue and white AI chat interface inspired by the provided design. Includes a responsive layout, quick prompts, typing indicator, recent prompts, light/dark toggle, and a Flask backend. It runs in demo mode even before an API key is added; configure Gemini to enable live AI responses.
+AuraBot is an AI-powered chatbot designed to help users with programming, technology, learning, and everyday questions through a simple and user-friendly interface.
 
-## Requirements
-- Python 3.10 or newer
-- Internet connection for installing packages and using Gemini
-- Optional: a Google AI Studio Gemini API key
+## ✨ Features
 
-## Run on Windows (VS Code)
-Open the `AuraBot` folder in VS Code, then open **Terminal → New Terminal** and run these commands one by one:
+* 💬 Interactive AI chatbot
+* 🤖 AI-powered responses
+* 💻 Programming and web development assistance
+* 📚 Simple explanations of technical concepts
+* 📱 User-friendly interface
+* ⚡ Fast and convenient conversations
 
-```powershell
-py -m venv venv
-.\venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
+## 🛠️ Technologies Used
+
+* Python
+* Flask
+* HTML
+* CSS
+* JavaScript
+* AI API
+
+## 📂 Project Structure
+
+```text
+AuraBot/
+├── app.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+├── .env.example
+├── templates/
+└── static/
+```
+
+## ⚙️ Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### 2. Open the project folder
+
+```bash
+cd AuraBot
+```
+
+### 3. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+### 4. Activate the virtual environment
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+### 5. Install dependencies
+
+```bash
 pip install -r requirements.txt
-Copy-Item .env.example .env
+```
+
+### 6. Configure environment variables
+
+Create a `.env` file in the project root and add the environment variables required by your application.
+
+Never upload API keys or secret credentials to GitHub.
+
+### 7. Run AuraBot
+
+```bash
 python app.py
 ```
 
-Open `http://127.0.0.1:5000` in your browser. Keep the terminal open while using the app.
+Open the local URL displayed in your terminal to use the chatbot.
 
-If PowerShell blocks activation, run this in the same terminal, then activate again:
+## 🔐 Security
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\venv\Scripts\Activate.ps1
-```
+* Keep API keys private.
+* Never commit your `.env` file.
+* Store secrets securely using environment variables.
 
-## Enable live AI responses
-1. Get a Gemini API key from Google AI Studio, if API access is available to your account.
-2. Open `.env` and set `GEMINI_API_KEY=your_key_here` (do not include quotes unless needed).
-3. Save `.env`, stop the server with `Ctrl+C`, then run `python app.py` again.
-4. Do not share `.env` or upload it to GitHub. It is ignored by `.gitignore`.
+## 👩‍💻 Developer
 
-If no key is configured, the UI still works with a small demo response handler. API quotas and access depend on the Google account, project, model, and current limits; this project cannot guarantee external API availability.
+**Priyadarshini S.**
 
-## Troubleshooting
-- **`python` is not recognized:** try `py app.py` and `py -m pip install -r requirements.txt`.
-- **`ModuleNotFoundError`:** activate the virtual environment and run `pip install -r requirements.txt` again.
-- **Page does not open:** make sure the terminal says the Flask server is running, then visit `http://127.0.0.1:5000`.
-- **Port already in use:** stop the other server or set `PORT=5001` in `.env`, restart, and open `http://127.0.0.1:5001`.
-- **Gemini quota/API error:** verify the API key and model access in Google AI Studio; the UI will remain running and show a friendly message.
+B.Com Information Technology Student | Web Developer | Aspiring Agentic AI Developer
 
-## Routes
-- `/` — chat UI
-- `/api/chat` — POST JSON `{ "message": "Hello" }`
-- `/health` — backend status (does not reveal the API key)
+## 🎯 Project Goal
+
+To create a helpful AI companion that makes technology, programming, and learning more accessible to everyone.
+
+---
+
+⭐ If you find this project interesting, consider giving the repository a star!
